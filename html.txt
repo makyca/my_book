@@ -1,0 +1,208 @@
+HTML: HyperText Markup Language
+
+
+<!DOCTYPE HTML>		//tako počinje svaki page za html5
+<html>
+    <head>			//naslov
+        <title>Challenge: Write a Poem</title>
+        <meta charset="utf-8">		//koding slova
+    </head>
+    <body>
+        <h1>The Baby's Dance</h1>			
+        <p>Dance, little baby, dance up high,<br>
+            Never mind baby, mother is by;<br>
+            Crow and caper, caper and crow,<br>
+            There little baby, there you go:<br>
+            Up to the ceiling, down to the ground,<br>
+            Backwards and forwards, round and round.<br>
+            Then dance, little baby, and mother shall sing,<br>
+            With the merry gay coral, ding, ding, a-ding, ding.<br>
+        </p>
+        
+    </body>
+</html>
+
+<h1> ... </h1>    najveći heading za slova ide od h1 do h6
+<p> ... </p>		.... paragraf
+<br>		break... iliti novi red 
+<em> </em>  emphasize... naglasiti... ili staviti riječ u italic
+<strong> .... </strong> ... boldano
+
+
+Liste
+<ul> .... </ul>  . ... unordered list .... za bullet list
+<li> ... </li>  ... list item ... ide unutar <ul>
+<ol> .... </ol>    ordered list .... za numerirane liste
+
+Slike
+
+<img src="https://www.kasandbox.org/programming-images/animals/rabbit.png"alt="Rabbit with lop ears in barn" width="203"> 
+ img = image   	src = source		alt="" .... alt je alternativa koja će pisati ukoliko je link na sliku potrgan
+ 
+ 
+ CSS - Cascading Style Sheets
+ -embedamo ga u html
+ traži na csszengarden.com
+ 
+ 
+ <style>   sve unutra je css </style>    - dodajemo ga u <head>
+ // dodavanje boje na tekst:
+ h2 { color: rgb(0,255,255); }
+ //dodavanje pozadine
+ body {background-color: rgb(97,250,255)}
+ 
+ IDOVI
+ 
+ <p id="rabbits-song"> - označavanje paragrafa nekim id-om	.... idovi moraju biti jedinstveni
+ #rabbits-song {
+	background-color: yellow;
+    }
+	
+Sa #kažemo da slijedi naziv id-a ,,,, i sad sve što pripada uz taj id možemo stylat
+idovi su case-sensitive 
+
+CSS: Selecting by class
+
+<p class="song-lyrics"> .... </p>
+nazovemo taj paragraf tom_i_tom klasom.... i onda kasnije možemo pomoću klase zasebno stylati po klasama
+sa id-ovima to nije moguće jer oni moraju biti jedinstveni, pa se izvrši samo na prvom pronađenom
+Sa . kažemo da slijedi naziv klase ... i sad sve što pripada uz tu klasu možemo stylat
+
+.song-lyrics {
+            background-color: yellow;
+        }
+LINKs		
+		
+<a> </a> - ancor ---- za linkanje teksta
+href = hyper reference
+target="_blank" - otvori link u novoj stranici
+#primjer
+<a target="_blank" href="http://home.web.cern.ch/topics/birth-web">Read more about the history of HTML</a>
+
+za internal links... kao na primjer povezivanje table of contents... koristimo id-ove kao href
+
+
+TABLES
+
+
+<table>  --- početak tablice
+<thead>   --- table head
+<tr>  --- table row
+<th> table header cell --- tj nazivi stupaca
+<tbody> --- za data
+<td> --- tabular data
+
+$ primjer tablice sa 3 stupca i 3 retka
+
+<table>
+            <thead>
+                <tr>
+                    <th>Pet name</th>
+                    <th>Species</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Black & white</td>
+                    <td>rabbit</td>
+                    <td>black and white</td>
+                </tr>
+                <tr>
+                    <td>Daemon</td>
+                    <td>cat</td>
+                    <td>black</td>
+                </tr>
+                <tr>
+                    <td>Angel</td>
+                    <td>cat</td>
+                    <td>orange</td>
+                </tr>
+            </tbody>
+        </table>
+		
+ HTML comments
+		
+<!-- komentari -->
+CSS TEXT EDITING
+
+FONT-FAMILY property
+font-family: sans-serif;      .... obicno default font... npr arial ili times new roman
+font-family: "Helvetica", sans-serif;    .... koristi će se helvetica, ali ako korisnik nema taj font, onda pada na alternativu, tj. default.
+font-family: monospace     .. sa fixed width
+genericki: sans-serif, serif, monospace, fantasy, cursive
+
+FONT SIZE ... uz h1-h6
+font-size: 11px;   ... u pixelima body
+font-size:2em;  za npr h2 relativno u odnosu na specificirano u pixelima .... za primjer je 22px
+
+font-weight:bold;
+font-style:italic;
+
+shortend property: - više font manipuliranja u jednoj liniji
+font: italic 13px fantasy;
+line-height:1.5em;
+text-align:center;   .... ili left, right
+text-decoration:underline;
+text-decoration:none;   --- nestaje i underline ispod linkova
+
+
+CSS INHERITANCE
+font-family za body.... svagdje će biti tako, osim ako nije specifično definirano
+color, etc...
+
+CSS LAYOUT
+<span>  </span>  ... for grouping text ... creates an inline element
+
+<div id="something">.... </div>   --- to box about everything
+--- za grupiranje elemenata
+---creates a block of element
+-za napravit određene boxeve koje želimo micati, editirati... itd
+overflow:visible
+overflow:hidden
+overflow:auto; .... dodaje scrollbar ako je višak teksta u divu koji je visible
+width:
+height:
+overflow-y:
+overflow-x:
+
+THE BOX MODEL
+content
+padding - to put space between content and edges
+padding: 15px;
+
+border:1px solid rgb(145,0,0);  (thicknes, style, color)
+border-top:10px solid purple;
+style: groove, ridge, double, dashed, dotted
+
+margin- transparent area around the box that separates the box from other elements
+margin:15px;  --- doda se 15px na sve strane oko boxa
+margin: 15px 0px 10px 6px;  (top,right,botom,left)
+margin-right:10px;
+margin-bottom:10px;
+margin:auto;  ... centrira
+
+POSITION
+text.... top-to-bottom
+slike--- left-to right
+position:relative;  --- pomicanje u odnosu na ostale elemente i vrh stranice
+top:20px;
+left:10px;
+
+position: absolute; --- pomicanje kamo god želimo, neovisno o ostalim elementima
+---ide preko ostalih elemenata
+z-index ... za definiranje koji element ide preko kojeg po redu
+broj 1 je dno...
+z-index:1;
+z-index:2;
+itd...
+
+position:fixed;  --- element uvijek ostaje tamo gdje je postavljen, neovisno o 
+scrollanju stranice
+
+float:left;
+float:right;     --- za wrap-around-text
+uz float je pametno staviti margin, i width ako se radi o non-images
+clear:both;    ---clear oslobađa od ostalih floatanja
+clear:right;
+clear:left;
